@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
+import {greet} from "webassembly-utils";
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      numbers: [
-        {
-          n: 3
-        }
-      ]
-    }
+    this.state = { number: 0, population: 0, error: 0 }
+
+    this.populationChange = this.populationChange.bind(this)
+    this.errorChange = this.errorChange.bind(this)
   }
-  addNumber() {
-    this.numbers.push({n:9})
+  populationChange(event) {
+    this.setState({population: event.target.value})
+  }
+  errorChange(event) {
+    this.setState({error: event.target.value})
+  }
+  calucurate() {
+    // calucurate(this.population, this.error)
+      // this.setState({number: n})
   }
   render() {
     return (
@@ -22,16 +27,15 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            {this.state.numbers[0].n}
+            {this.state.number}
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <div>
+            <p>人口</p>
+            <p><input name="population" type="text" value={this.state.population} onChange={this.populationChange}/></p>
+            <p>誤差</p>
+            <p><input name="error" type="text" value={this.state.error} onChange={this.errorChange}/></p>
+            <p><button onClick={ this.calucurate }>計算</button></p>
+          </div>
         </header>
       </div>
     );

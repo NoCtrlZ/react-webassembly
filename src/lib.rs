@@ -13,6 +13,13 @@ pub fn greet(name: &str) {
 }
 
 #[wasm_bindgen]
-pub fn add(a: u32, b: u32) -> u32 {
-    a + b
+pub fn calculate(population: f32, error: f32) -> f32 {
+    let reliability_coefficient: f32 = 1.96;
+    let population_rate: f32 = 0.5;
+    let left = error / reliability_coefficient;
+    let one: f32 = 1.0;
+    let down = population_rate * (one - population_rate);
+    let right = one / down;
+    let sample_size = population / (left * left * right);
+    sample_size
 }

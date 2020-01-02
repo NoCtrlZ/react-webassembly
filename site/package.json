@@ -15,6 +15,6 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
-    "webassembly-utils": "^0.1.1"
+    "webassembly-utils": "^0.1.2"
   }
 }
