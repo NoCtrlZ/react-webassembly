@@ -1,8 +1,10 @@
 ## Premise
 Component | Tool
 :------------ | :-------------
-Frontend|Next, TypeScript
-Backend|Rocket, Express
-Database|MySQL
-Blockchain|Teal
+Frontend Application|Next, TypeScript
+Application Server|Rocket
+Blockchain Server|Express
+Application Database|MySQL
+Blockchain Database|Cockroach
+Algorand Contract|Teal
 Infrastructure|Docker
